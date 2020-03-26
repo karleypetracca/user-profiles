@@ -1,0 +1,37 @@
+.cardWrapper {
+    display: inline-block;
+    background-color: rgb(235, 235, 235);
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(190, 190, 190);
+    height: 350px;
+    width: 300px;
+    margin: 10px 0;
+}
+
+.cardInner {
+    margin: 5px;
+}
+
+.cardTop img {
+    border-radius: 50%;
+}
+
+.cardTop em, .cardTop p {
+    font-size: larger;
+    font-style: normal;
+    color: rgb(66, 66, 66);
+}
+
+em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.cardBottom {
+    max-height: 50%;
+    text-align: left;
+    margin: 30px;
+    text-indent: -20px;
+}

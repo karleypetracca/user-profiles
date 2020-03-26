@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from "./components/Card.jsx"
+import UserCard from "./components/UserCard.jsx"
 import './App.css';
 
 function App() {
@@ -10,7 +10,16 @@ function App() {
           User Profiles Generator
         </p>
       </header>
-      <Card />
+      <section className="profiles">
+        <div className="row">
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+        </div>
+      </section>
     </div>
   );
 }
