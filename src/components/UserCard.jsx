@@ -45,7 +45,7 @@ class UserCard extends Component {
 
     render() {
         return (
-          <Card isDisplay="inline-block">
+          <Card>
             <CardImage isSize={2}>
               <Image src={this.state.picture.large} />
             </CardImage>
