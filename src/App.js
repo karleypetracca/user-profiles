@@ -1,5 +1,5 @@
 import React from "react";
-import UserCard from "./components/UserCard.jsx"
+import UserCard from "./components/UserCard.jsx";
 import "./App.css";
 import "bulma/css/bulma.css";
 import { Section, Container, Columns, Column } from "bloomer";
