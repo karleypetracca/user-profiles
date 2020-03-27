@@ -1,3 +1,9 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   color: rgb(40, 44, 52);
@@ -16,12 +22,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-.row {
-  margin: 10px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
 }

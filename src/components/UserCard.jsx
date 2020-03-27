@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import './UserCard.css';
+// import './UserCard.css';
+import { Card, CardImage, CardContent, Image, Media, MediaLeft, MediaContent, Title, Subtitle, Content } from "bloomer";
 
 class UserCard extends Component {
 
@@ -10,6 +11,7 @@ class UserCard extends Component {
         address: "", // contains number, name
         phone: "",
         picture: "", // contains large, medium, thumbnail
+        username: "",
     }
 
     async componentDidMount() {
@@ -23,14 +25,17 @@ class UserCard extends Component {
                 month: months[new Date(object.dob.date).getMonth()],
                 day: new Date(object.dob.date).getDate()
             };
-            console.log(date);
+            let username = (
+              object.name.first.slice(0, 1) + object.name.last
+            ).toLowerCase();
             this.setState({
                 name: object.name, // contains title, first, last
                 email: object.email,
                 birthday: date,
                 address: object.location.street, // contains number, name
                 phone: object.phone,
-                picture: object.picture, // contains large, medium, thumbnail
+                picture: object.picture, // contains large, medium, thumbnail,
+                username: username,
             })
         } catch (error) {
             return error;
@@ -39,22 +44,41 @@ class UserCard extends Component {
 
     render() {
         return (
-            <div className="cardWrapper">
-                <div className="cardInner">
-                    <div className="cardTop">
-                        <img src={this.state.picture.large}></img>
-                        <p>Hi, my name is </p>
-                        <em>{this.state.name.first} {this.state.name.last}</em>
-                    </div>
-                    <div className="cardBottom">
-                        <p><em>Birthday:</em> {this.state.birthday.month} {this.state.birthday.day}</p>
-                        <p><em>Email:</em> {this.state.email}</p>
-                        <p><em>Phone:</em> {this.state.phone}</p>
-                        <p><em>Address:</em> {this.state.address.number} {this.state.address.name}</p>
-                    </div>
-                </div>
-            </div>
-        )
+          <Card isDisplay="inline-block">
+            <CardImage isSize={2}>
+              <Image src={this.state.picture.large} />
+            </CardImage>
+            <CardContent>
+              <Media>
+                <MediaLeft isDisplay="flex" isFlex="center">
+                  <Image isSize="48x48" src={this.state.picture.large} />
+                </MediaLeft>
+                <MediaContent>
+                  <Title isSize={4}>
+                    {this.state.name.first} {this.state.name.last}
+                  </Title>
+                  <Subtitle isSize={6}>@{this.state.username}</Subtitle>
+                </MediaContent>
+              </Media>
+              <Content hasTextAlign="left">
+                <p>
+                  <b>Birthday:</b> {this.state.birthday.month}{" "}
+                  {this.state.birthday.day}
+                </p>
+                <p>
+                  <b>Email:</b> {this.state.email}
+                </p>
+                <p>
+                  <b>Phone:</b> {this.state.phone}
+                </p>
+                <p>
+                  <b>Address:</b> {this.state.address.number}{" "}
+                  {this.state.address.name}
+                </p>
+              </Content>
+            </CardContent>
+          </Card>
+        );
     }
 }
 
