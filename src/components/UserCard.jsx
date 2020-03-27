@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import './UserCard.css';
+import "bulma/css/bulma.css";
 import { Card, CardImage, CardContent, Image, Media, MediaLeft, MediaContent, Title, Subtitle, Content } from "bloomer";
 
 class UserCard extends Component {
@@ -81,6 +82,5 @@ class UserCard extends Component {
         );
     }
 }
-
 
 export default UserCard;
